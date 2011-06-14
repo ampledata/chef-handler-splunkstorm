@@ -6,7 +6,7 @@ A Chef handler that Tweets
 Usage
 =====
 
-See [Enable the Chef Handler with the chef_handler LWRP](http://wiki.opscode.com/display/chef/Distributing+Chef+Handlers#DistributingChefHandlers-EnabletheChefHandlerwiththe%7B%7Bchefhandler%7D%7DLWRP)
+See [Enable Chef Handler with LWRP](http://wiki.opscode.com/display/chef/Distributing+Chef+Handlers#DistributingChefHandlers-EnabletheChefHandlerwiththe%7B%7Bchefhandler%7D%7DLWRP)
 
 Example Chef recipe:
 
@@ -15,8 +15,8 @@ include_recipe "chef_handler"
 
 gem_package "chef-handler-twitter"
 
-chef_handler "TwitterReport::TwitterHandler" do
-  source "chef/handler/twitter"
+chef_handler "TwitterHandler" do
+  source "chef/handler/twitter_handler"
   arguments [ node[:chef_handler][:twitter][:consumer_key],
               node[:chef_handler][:twitter][:consumer_secret],
               node[:chef_handler][:twitter][:oauth_token],
