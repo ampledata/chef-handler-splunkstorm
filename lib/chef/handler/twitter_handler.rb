@@ -18,7 +18,7 @@ require "chef/handler"
 require "twitter"
 
 module TwitterReport
-  class TwitteHandler < Chef::Handler
+  class TwitterHandler < Chef::Handler
     def initialize( consumer_key,
                     consumer_secret,
                     oauth_token,
