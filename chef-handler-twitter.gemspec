@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "chef-handler-twitter"
-  s.version = "0.1"
+  s.version = "0.2"
   s.platform = Gem::Platform::RUBY
   s.summary = "Tweeting Chef report handler"
   s.description = s.summary
