@@ -17,27 +17,25 @@
 require "chef/handler"
 require "twitter"
 
-module TwitterReport
-  class TwitterHandler < Chef::Handler
-    def initialize( consumer_key,
-                    consumer_secret,
-                    oauth_token,
-                    oauth_token_secret )
-      Twitter.configure do |config|
-        config.consumer_key = consumer_key
-        config.consumer_secret = consumer_secret
-        config.oauth_token = oauth_token
-        config.oauth_token_secret = oauth_token_secret
-      end
+class TwitterHandler < Chef::Handler
+  def initialize( consumer_key,
+                  consumer_secret,
+                  oauth_token,
+                  oauth_token_secret )
+    Twitter.configure do |config|
+      config.consumer_key = consumer_key
+      config.consumer_secret = consumer_secret
+      config.oauth_token = oauth_token
+      config.oauth_token_secret = oauth_token_secret
     end
-
-    def report
-      if run_status.success?
-        Twitter.update( "Chef run succeeded in #{run_status.elapsed_time} seconds on #{node.name}" )
-      else
-        Twitter.update( "Chef run failed on #{node.name}" )
-      end
-    end
-
   end
+
+  def report
+    if run_status.success?
+      Twitter.update( "Chef run succeeded in #{run_status.elapsed_time} seconds on #{node.name}" )
+    else
+      Twitter.update( "Chef run failed on #{node.name}" )
+    end
+  end
+
 end
