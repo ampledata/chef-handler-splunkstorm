@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'chef-handler-splunkstorm'
-  s.version = '1.1.1'
+  s.version = '1.2.0'
   s.platform = Gem::Platform::RUBY
   s.summary = 'Chef Exception & Reporting Handler for Splunk Storm.'
   s.description = [
