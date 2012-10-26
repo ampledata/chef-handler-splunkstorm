@@ -84,7 +84,7 @@ class Chef
         endpoint_path = [API_ENDPOINT, url_params].join('?')
 
         request = RestClient::Resource.new(
-          SPLUNKSTORM_URL, :user => @access_token, :password => 'x')
+          SPLUNKSTORM_URL, :user => 'x', :password => @access_token)
 
         request[endpoint_path].post(status_event.to_json)
       end
